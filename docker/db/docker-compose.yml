@@ -1,0 +1,14 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: db-container
+    restart: always
+    environment:
+      MYSQL_DATABASE: ntron
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_USER: ntronuser
+      MYSQL_PASSWORD: ntronpass
+    ports:
+      - "3366:3306"
+    volumes:
+      - ../../db_data:/var/lib/mysql
